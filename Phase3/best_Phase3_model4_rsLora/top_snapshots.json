@@ -1,0 +1,17 @@
+[
+  {
+    "f1": 0.4027961783131959,
+    "frac": 2.0,
+    "path": "/kaggle/working/phase3_model4_rslora_teacher/heldout_snapshot_e2.000_f1_0.402796.pt"
+  },
+  {
+    "f1": 0.3953678490645011,
+    "frac": 1.2497625830959165,
+    "path": "/kaggle/working/phase3_model4_rslora_teacher/heldout_snapshot_e1.250_f1_0.395368.pt"
+  },
+  {
+    "f1": 0.39000777134002207,
+    "frac": 3.0,
+    "path": "/kaggle/working/phase3_model4_rslora_teacher/heldout_snapshot_e3.000_f1_0.390008.pt"
+  }
+]

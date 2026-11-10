@@ -1,0 +1,642 @@
+[
+  {
+    "update": 50,
+    "target_budget": 1632,
+    "active": 1632,
+    "maximum": 1632,
+    "rank_min": 16,
+    "rank_mean": 16.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 100,
+    "target_budget": 1632,
+    "active": 1632,
+    "maximum": 1632,
+    "rank_min": 16,
+    "rank_mean": 16.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 150,
+    "target_budget": 1632,
+    "active": 1632,
+    "maximum": 1632,
+    "rank_min": 16,
+    "rank_mean": 16.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 200,
+    "target_budget": 1573,
+    "active": 1573,
+    "maximum": 1632,
+    "rank_min": 9,
+    "rank_mean": 15.42156862745098,
+    "rank_max": 16,
+    "pruned_now": 59
+  },
+  {
+    "update": 250,
+    "target_budget": 1508,
+    "active": 1508,
+    "maximum": 1632,
+    "rank_min": 8,
+    "rank_mean": 14.784313725490197,
+    "rank_max": 16,
+    "pruned_now": 65
+  },
+  {
+    "update": 300,
+    "target_budget": 1447,
+    "active": 1447,
+    "maximum": 1632,
+    "rank_min": 5,
+    "rank_mean": 14.186274509803921,
+    "rank_max": 16,
+    "pruned_now": 61
+  },
+  {
+    "update": 350,
+    "target_budget": 1389,
+    "active": 1389,
+    "maximum": 1632,
+    "rank_min": 5,
+    "rank_mean": 13.617647058823529,
+    "rank_max": 16,
+    "pruned_now": 58
+  },
+  {
+    "update": 400,
+    "target_budget": 1335,
+    "active": 1335,
+    "maximum": 1632,
+    "rank_min": 3,
+    "rank_mean": 13.088235294117647,
+    "rank_max": 16,
+    "pruned_now": 54
+  },
+  {
+    "update": 450,
+    "target_budget": 1285,
+    "active": 1285,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 12.598039215686274,
+    "rank_max": 16,
+    "pruned_now": 50
+  },
+  {
+    "update": 500,
+    "target_budget": 1238,
+    "active": 1238,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 12.137254901960784,
+    "rank_max": 16,
+    "pruned_now": 47
+  },
+  {
+    "update": 550,
+    "target_budget": 1194,
+    "active": 1194,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 11.705882352941176,
+    "rank_max": 16,
+    "pruned_now": 44
+  },
+  {
+    "update": 600,
+    "target_budget": 1154,
+    "active": 1154,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 11.313725490196079,
+    "rank_max": 16,
+    "pruned_now": 40
+  },
+  {
+    "update": 650,
+    "target_budget": 1116,
+    "active": 1116,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 10.941176470588236,
+    "rank_max": 16,
+    "pruned_now": 38
+  },
+  {
+    "update": 700,
+    "target_budget": 1081,
+    "active": 1081,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 10.598039215686274,
+    "rank_max": 16,
+    "pruned_now": 35
+  },
+  {
+    "update": 750,
+    "target_budget": 1049,
+    "active": 1049,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 10.284313725490197,
+    "rank_max": 16,
+    "pruned_now": 32
+  },
+  {
+    "update": 800,
+    "target_budget": 1020,
+    "active": 1020,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 10.0,
+    "rank_max": 16,
+    "pruned_now": 29
+  },
+  {
+    "update": 850,
+    "target_budget": 993,
+    "active": 993,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 9.735294117647058,
+    "rank_max": 16,
+    "pruned_now": 27
+  },
+  {
+    "update": 900,
+    "target_budget": 969,
+    "active": 969,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 9.5,
+    "rank_max": 16,
+    "pruned_now": 24
+  },
+  {
+    "update": 950,
+    "target_budget": 947,
+    "active": 947,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 9.284313725490197,
+    "rank_max": 16,
+    "pruned_now": 22
+  },
+  {
+    "update": 1000,
+    "target_budget": 927,
+    "active": 927,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 9.088235294117647,
+    "rank_max": 16,
+    "pruned_now": 20
+  },
+  {
+    "update": 1050,
+    "target_budget": 910,
+    "active": 910,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.92156862745098,
+    "rank_max": 16,
+    "pruned_now": 17
+  },
+  {
+    "update": 1100,
+    "target_budget": 894,
+    "active": 894,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.764705882352942,
+    "rank_max": 16,
+    "pruned_now": 16
+  },
+  {
+    "update": 1150,
+    "target_budget": 880,
+    "active": 880,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.627450980392156,
+    "rank_max": 16,
+    "pruned_now": 14
+  },
+  {
+    "update": 1200,
+    "target_budget": 868,
+    "active": 868,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.509803921568627,
+    "rank_max": 16,
+    "pruned_now": 12
+  },
+  {
+    "update": 1250,
+    "target_budget": 858,
+    "active": 858,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.411764705882353,
+    "rank_max": 16,
+    "pruned_now": 10
+  },
+  {
+    "update": 1300,
+    "target_budget": 849,
+    "active": 849,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.323529411764707,
+    "rank_max": 16,
+    "pruned_now": 9
+  },
+  {
+    "update": 1350,
+    "target_budget": 841,
+    "active": 841,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.245098039215685,
+    "rank_max": 16,
+    "pruned_now": 8
+  },
+  {
+    "update": 1400,
+    "target_budget": 835,
+    "active": 835,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.186274509803921,
+    "rank_max": 16,
+    "pruned_now": 6
+  },
+  {
+    "update": 1450,
+    "target_budget": 830,
+    "active": 830,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.137254901960784,
+    "rank_max": 16,
+    "pruned_now": 5
+  },
+  {
+    "update": 1500,
+    "target_budget": 826,
+    "active": 826,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.098039215686274,
+    "rank_max": 16,
+    "pruned_now": 4
+  },
+  {
+    "update": 1550,
+    "target_budget": 822,
+    "active": 822,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.058823529411764,
+    "rank_max": 16,
+    "pruned_now": 4
+  },
+  {
+    "update": 1600,
+    "target_budget": 820,
+    "active": 820,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.03921568627451,
+    "rank_max": 16,
+    "pruned_now": 2
+  },
+  {
+    "update": 1650,
+    "target_budget": 818,
+    "active": 818,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.019607843137255,
+    "rank_max": 16,
+    "pruned_now": 2
+  },
+  {
+    "update": 1700,
+    "target_budget": 817,
+    "active": 817,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.009803921568627,
+    "rank_max": 16,
+    "pruned_now": 1
+  },
+  {
+    "update": 1750,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 1
+  },
+  {
+    "update": 1800,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 1850,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 1895,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 1900,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 1950,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2000,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2050,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2100,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2150,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2200,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2250,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2300,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2350,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2400,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2450,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2500,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2550,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2600,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2650,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2700,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2750,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2800,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2850,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2900,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 2950,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 3000,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 3050,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 3100,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  },
+  {
+    "update": 3150,
+    "target_budget": 816,
+    "active": 816,
+    "maximum": 1632,
+    "rank_min": 2,
+    "rank_mean": 8.0,
+    "rank_max": 16,
+    "pruned_now": 0
+  }
+]
