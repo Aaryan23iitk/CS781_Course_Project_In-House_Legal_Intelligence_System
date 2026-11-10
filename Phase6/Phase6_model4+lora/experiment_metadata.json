@@ -1,0 +1,112 @@
+{
+  "experiment": "Phase6-Exp2-Model4-Standard-LoRA",
+  "base_architecture": "efficient_gqa_rope_swiglu_decoder",
+  "checkpoint": "/kaggle/input/datasets/aaryant23/phase2-model4/eff_full_best (6).pt",
+  "tokenizer": "/kaggle/input/datasets/aaryant23/phase2-model4/tokenizer.json",
+  "lora": {
+    "rank": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "targets": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "variant": "standard LoRA"
+  },
+  "trainable_parameters": 3307520,
+  "total_parameters": 102616960,
+  "max_source_tokens": 1500,
+  "max_target_tokens": 800,
+  "max_seq_len": 2400,
+  "micro_batch_size": 1,
+  "grad_accum_steps": 8,
+  "epochs": 3,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.05,
+  "amp_dtype": "torch.float16",
+  "gen_max_new_tokens": 800,
+  "selected_decoding": {
+    "name": "ng12+min",
+    "min_frac": 0.45,
+    "ngram": 12,
+    "rep": 1.0
+  },
+  "decoding_grid": [
+    {
+      "rouge1": 0.34388251184471197,
+      "rougeL": 0.23326167092870947,
+      "bertscore_f1": 0.7947834730148315,
+      "avg_words": 386.03125,
+      "name": "greedy",
+      "sec": 111.7
+    },
+    {
+      "rouge1": 0.34388251184471197,
+      "rougeL": 0.23326167092870947,
+      "bertscore_f1": 0.7947834730148315,
+      "avg_words": 386.03125,
+      "name": "greedy+min",
+      "sec": 77.5
+    },
+    {
+      "rouge1": 0.4465415328529432,
+      "rougeL": 0.25002435145677576,
+      "bertscore_f1": 0.833272397518158,
+      "avg_words": 373.84375,
+      "name": "ng12+min",
+      "sec": 77.1
+    },
+    {
+      "rouge1": 0.4205566103146733,
+      "rougeL": 0.24438750569071083,
+      "bertscore_f1": 0.8262479901313782,
+      "avg_words": 376.21875,
+      "name": "ng20+min",
+      "sec": 76.9
+    },
+    {
+      "rouge1": 0.42199869834101794,
+      "rougeL": 0.24245165024451698,
+      "bertscore_f1": 0.8294044733047485,
+      "avg_words": 337.65625,
+      "name": "ng20+rep1.05+min",
+      "sec": 77.3
+    }
+  ],
+  "source_selector": "learned",
+  "selector_coverage": {
+    "lead": 0.3805708971061794,
+    "headtail": 0.4076157577576538,
+    "tfidf": 0.402376375311047,
+    "learned": 0.41437348420097286,
+    "full_document": 0.8676049248922036
+  },
+  "train_examples": 6677,
+  "validation_examples": 351,
+  "validation_scored_examples": 100,
+  "validation_strategy": "full held-out validation set",
+  "runtime_budget_hours": "3-4",
+  "training": {
+    "baseline_val_loss": 1.6739249122383857,
+    "best_val_loss": 1.297139384631602,
+    "global_step": 2505,
+    "train_minutes": 75.98637814919154
+  },
+  "validation_metrics": {
+    "rouge1_f1": 0.39095043130686763,
+    "rouge2_f1": 0.16865509106301207,
+    "rougeL_f1": 0.22633295547294124,
+    "bertscore_f1": 0.826414942741394,
+    "empty_predictions": 0,
+    "mean_pred_words": 366.69,
+    "mean_ref_words": 952.83
+  },
+  "seed": 2026,
+  "torch_version": "2.11.0+cu128"
+}

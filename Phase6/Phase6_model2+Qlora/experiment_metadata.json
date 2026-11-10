@@ -1,0 +1,161 @@
+{
+  "experiment": "Phase6-Exp3-Model2-QLoRA-NF4",
+  "base_architecture": "phase1_custom_decoder_only_sinusoidal_gelu",
+  "checkpoint": "/kaggle/input/datasets/aaryant23/phase2-model2-ckpts/dec_full_best (8).pt",
+  "tokenizer": "/kaggle/input/datasets/aaryant23/phase2-model2-ckpts/tokenizer (1).json",
+  "lora": {
+    "rank": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "quant_type": "nf4",
+    "double_quant": true,
+    "targets": [
+      "qkv",
+      "out_proj",
+      "ff.0",
+      "ff.2"
+    ],
+    "variant": "QLoRA NF4 double-quant"
+  },
+  "trainable_parameters": 2129920,
+  "total_parameters": 49916800,
+  "max_source_tokens": 1500,
+  "max_target_tokens": 800,
+  "max_seq_len": 2048,
+  "micro_batch_size": 1,
+  "grad_accum_steps": 8,
+  "epochs": 3,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.05,
+  "amp_dtype": "torch.float16",
+  "gen_max_new_tokens": 800,
+  "selected_decoding": {
+    "name": "ng8+rep1.05+min60",
+    "min_frac": 0.6,
+    "ngram": 8,
+    "rep": 1.05,
+    "rouge1_f1": 0.4395938891343776,
+    "rouge2_f1": 0.18879260821118587,
+    "rougeL_f1": 0.23085427862055957,
+    "bertscore_f1": 0.8293243646621704,
+    "avg_words": 385.5,
+    "composite": 0.4999241774723692
+  },
+  "decoding_grid": [
+    {
+      "name": "greedy",
+      "min_frac": 0.0,
+      "ngram": 0,
+      "rep": 1.0,
+      "rouge1_f1": 0.2274396056220016,
+      "rouge2_f1": 0.05099069627576515,
+      "rougeL_f1": 0.1933460445467682,
+      "bertscore_f1": 0.7516415119171143,
+      "avg_words": 394.125,
+      "composite": 0.39080905402862803
+    },
+    {
+      "name": "greedy+min",
+      "min_frac": 0.45,
+      "ngram": 0,
+      "rep": 1.0,
+      "rouge1_f1": 0.2274396056220016,
+      "rouge2_f1": 0.05099069627576515,
+      "rougeL_f1": 0.1933460445467682,
+      "bertscore_f1": 0.7516415119171143,
+      "avg_words": 394.125,
+      "composite": 0.39080905402862803
+    },
+    {
+      "name": "ng12+min",
+      "min_frac": 0.45,
+      "ngram": 12,
+      "rep": 1.0,
+      "rouge1_f1": 0.38510591171569186,
+      "rouge2_f1": 0.1474256025720685,
+      "rougeL_f1": 0.22845437188285989,
+      "bertscore_f1": 0.811145007610321,
+      "avg_words": 384.84375,
+      "composite": 0.47490176373629095
+    },
+    {
+      "name": "ng20+min",
+      "min_frac": 0.45,
+      "ngram": 20,
+      "rep": 1.0,
+      "rouge1_f1": 0.33785492494499814,
+      "rouge2_f1": 0.11855424703546816,
+      "rougeL_f1": 0.21658424769487267,
+      "bertscore_f1": 0.7986746430397034,
+      "avg_words": 386.25,
+      "composite": 0.451037938559858
+    },
+    {
+      "name": "ng20+rep1.05+min",
+      "min_frac": 0.45,
+      "ngram": 20,
+      "rep": 1.05,
+      "rouge1_f1": 0.36760465275376486,
+      "rouge2_f1": 0.13642816807696176,
+      "rougeL_f1": 0.22886128763998442,
+      "bertscore_f1": 0.8088787794113159,
+      "avg_words": 376.75,
+      "composite": 0.46844823993502177
+    },
+    {
+      "name": "ng12+min60",
+      "min_frac": 0.6,
+      "ngram": 12,
+      "rep": 1.0,
+      "rouge1_f1": 0.38510591171569186,
+      "rouge2_f1": 0.1474256025720685,
+      "rougeL_f1": 0.22845437188285989,
+      "bertscore_f1": 0.811145007610321,
+      "avg_words": 384.84375,
+      "composite": 0.47490176373629095
+    },
+    {
+      "name": "ng8+rep1.05+min60",
+      "min_frac": 0.6,
+      "ngram": 8,
+      "rep": 1.05,
+      "rouge1_f1": 0.4395938891343776,
+      "rouge2_f1": 0.18879260821118587,
+      "rougeL_f1": 0.23085427862055957,
+      "bertscore_f1": 0.8293243646621704,
+      "avg_words": 385.5,
+      "composite": 0.4999241774723692
+    }
+  ],
+  "source_selector": "learned",
+  "selector_coverage": {
+    "lead": 0.3805708971061794,
+    "headtail": 0.4076157577576538,
+    "tfidf": 0.402376375311047,
+    "learned": 0.41437348420097286,
+    "full_document": 0.8676049248922036
+  },
+  "train_examples": 6677,
+  "validation_examples": 351,
+  "validation_scored_examples": 100,
+  "validation_strategy": "duplicate-grouped split; 100 scored docs disjoint from 32 decoding-tuning docs and selector-tuning docs",
+  "runtime_budget_hours": "3-4",
+  "training": {
+    "baseline_val_loss": 18.73604790284569,
+    "best_val_loss": 1.6569135002571433,
+    "global_step": 2505,
+    "train_minutes": 41.20666205883026
+  },
+  "validation_metrics": {
+    "rouge1_f1": 0.3922001838143684,
+    "rouge2_f1": 0.1545265340734707,
+    "rougeL_f1": 0.21505129095458725,
+    "bertscore_f1": 0.8221357464790344
+  },
+  "quantization": "nf4",
+  "double_quantization": true,
+  "compute_dtype": "torch.float16",
+  "seed": 2026,
+  "torch_version": "2.11.0+cu128"
+}

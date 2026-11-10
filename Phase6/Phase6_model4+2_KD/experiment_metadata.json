@@ -1,0 +1,28 @@
+{
+  "experiment": "Phase6-Exp7-Model4LoRA-to-Model2-KD",
+  "epochs": 3,
+  "lr": 0.0001,
+  "temperature": 2.0,
+  "hard_w": 0.5,
+  "kd_w": 0.5,
+  "best_val_ce": 3.0689491391181947,
+  "decoding": {
+    "rouge1_f1": 0.256335223114478,
+    "rougeL_f1": 0.2140678372227143,
+    "bertscore_f1": 0.7513712644577026,
+    "mean_words": 400.0,
+    "name": "ng20+min",
+    "min_frac": 0.45,
+    "ngram": 20,
+    "rep": 1.0,
+    "composite": 0.7513712644577026,
+    "seconds": 55.18570899963379
+  },
+  "validation": {
+    "rouge1_f1": 0.25129076639806414,
+    "rougeL_f1": 0.20574357266348733,
+    "bertscore_f1": 0.7524781823158264,
+    "mean_words": 400.0
+  },
+  "seed": 2026
+}

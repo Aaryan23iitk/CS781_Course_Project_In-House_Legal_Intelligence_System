@@ -1,0 +1,55 @@
+{
+  "experiment": "Phase6-Exp1-Model4-LoRMA+",
+  "base_architecture": "efficient_gqa_rope_swiglu_decoder",
+  "checkpoint": "/kaggle/input/datasets/aaryant23/phase2-model4/eff_full_best (6).pt",
+  "tokenizer": "/kaggle/input/datasets/aaryant23/phase2-model4/tokenizer.json",
+  "lorma": {
+    "rank": 8,
+    "alpha": 16,
+    "dropout": 0.05,
+    "targets": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "variant": "LoRMA+"
+  },
+  "trainable_parameters": 1705984,
+  "total_parameters": 101015424,
+  "max_source_tokens": 1500,
+  "max_target_tokens": 700,
+  "max_seq_len": 2200,
+  "micro_batch_size": 1,
+  "grad_accum_steps": 8,
+  "epochs": 2,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.05,
+  "amp_dtype": "torch.float16",
+  "gen_max_new_tokens": 700,
+  "no_repeat_ngram_size": 0,
+  "train_examples": 6677,
+  "validation_examples": 351,
+  "validation_scored_examples": 100,
+  "training": {
+    "baseline_val_loss": 1.583441912776651,
+    "best_val_loss": 1.2689302217365386,
+    "global_step": 1670,
+    "train_minutes": 47.37505211432775
+  },
+  "validation_metrics": {
+    "rouge1_f1": 0.2751417780402789,
+    "rouge2_f1": 0.08822961416081052,
+    "rougeL_f1": 0.1981684192387962,
+    "bertscore_f1": 0.7855862975120544,
+    "empty_predictions": 0,
+    "mean_pred_words": 334.25,
+    "mean_ref_words": 952.83
+  },
+  "seed": 2026,
+  "torch_version": "2.11.0+cu128"
+}
