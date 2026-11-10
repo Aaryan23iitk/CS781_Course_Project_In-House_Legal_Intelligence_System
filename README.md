@@ -68,7 +68,6 @@ Ranks were recorded on **09/11/2026**. Total valid Codabench submissions across 
 
 ## 3. Repository structure
 
-> **TODO (author):** replace the folder and file names below with the real ones from this repository. The layout is a suggestion.
 
 ```
 .
