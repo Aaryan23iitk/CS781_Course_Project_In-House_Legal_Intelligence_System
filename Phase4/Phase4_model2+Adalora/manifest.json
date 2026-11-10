@@ -1,0 +1,60 @@
+{
+  "phase": 4,
+  "experiment": 3,
+  "method": "AdaLoRA adaptive-rank low-rank adaptation",
+  "phase1_model": "Model2 decoder-only causal Transformer",
+  "checkpoint": "/kaggle/input/datasets/aaryant23/phase2-model2-ckpts/dec_full_best (8).pt",
+  "tokenizer_sha256": "9cfbe6f0e49067f63ba71fe1013021c5de9269a2b4bc6c9ae30a72e42102106d",
+  "train_unique": 32305,
+  "clean_dev": 994,
+  "test": 1517,
+  "excluded_dev_test_overlap": 0,
+  "chunks": [
+    "head",
+    "middle",
+    "evidence",
+    "tail"
+  ],
+  "chunk_len": 384,
+  "adalora_init_r": 12,
+  "adalora_target_r": 4,
+  "adalora_alpha": 24.0,
+  "adalora_dropout": 0.05,
+  "adalora_targets": [
+    "attn.qkv",
+    "attn.out_proj",
+    "ff.0",
+    "ff.2"
+  ],
+  "best_dev_macro_f1": 0.6528991391911645,
+  "best_threshold": 0.385,
+  "best_epoch_frac": 0.66662539466353,
+  "best_rank_summary": {
+    "active_total": 333,
+    "modules": 52,
+    "min": 1,
+    "mean": 6.403846153846154,
+    "max": 12
+  },
+  "lowercase": true,
+  "collapse_ws": true,
+  "refit_run": true,
+  "refit_threshold": 0.4224199652671814,
+  "test_refit_agreement": 0.7943309162821358,
+  "refit_target_batches": 11096,
+  "test_positive_rate_best": 0.44627554383651946,
+  "submission_strategies": {
+    "submission_best.zip": "50/50 calibrated heldout+refit margin ensemble",
+    "submission_heldout.zip": "clean-DEV-selected heldout checkpoint",
+    "submission_margin_h70_r30.zip": "70/30 calibrated heldout/refit margin hedge"
+  },
+  "submission_disagreement": {
+    "best_vs_heldout": 0.05009887936717205,
+    "best_vs_h70_r30": 0.02109426499670402,
+    "heldout_vs_h70_r30": 0.02900461437046803
+  },
+  "torch_version": "2.11.0+cu128",
+  "seed": 1234,
+  "test_labels_used": false,
+  "overlap_dev_labels_used": false
+}

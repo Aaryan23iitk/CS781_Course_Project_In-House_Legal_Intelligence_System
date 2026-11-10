@@ -1,0 +1,75 @@
+{
+  "phase": 4,
+  "experiment": 5,
+  "notebook_version": "v4_BETTER",
+  "method": "Post-residual Houlsby-style bottleneck adapters",
+  "phase1_model": "Model3 encoder-decoder Transformer",
+  "checkpoint": "/kaggle/input/datasets/aaryant23/phase2-model3-ckpts/encdec_full_best (2).pt",
+  "checkpoint_sha256": "28754f7ae29ab3e2c5789b979f7f3947c64d20052bf083a8899432f05a40d694",
+  "tokenizer_sha256": "9cfbe6f0e49067f63ba71fe1013021c5de9269a2b4bc6c9ae30a72e42102106d",
+  "dataset_sha256": {
+    "train": "a115cc722e9de8b68ac5d41179c12d86c2d537c0de8ff16412c44c6c8d1cce72",
+    "dev": "aa2d80ae77f5d532fbc3f30e4dea2776700b8e92e71c603737d8f41a9d30b514",
+    "test": "f3498fb832e90fe7264fcb6770918eb5261409e9a952d47a2979b6ed5b153b59"
+  },
+  "raw_dataset_rows": {
+    "train": 37387,
+    "dev": 1988,
+    "test": 1517
+  },
+  "architecture": {
+    "vocab_size": 24576,
+    "d_model": 512,
+    "encoder_layers": 9,
+    "decoder_layers": 9,
+    "n_heads": 8,
+    "ffn_dim": 2048,
+    "max_encoder_positions": 2048,
+    "max_decoder_positions": 1536
+  },
+  "train_unique": 32305,
+  "clean_dev": 994,
+  "test": 1517,
+  "excluded_dev_test_overlap": 0,
+  "chunks": [
+    "head",
+    "middle",
+    "evidence",
+    "tail"
+  ],
+  "chunk_len": 384,
+  "chunk_representation": "encoder last + encoder mean + masked max + learnably gated decoder cross-attention summary",
+  "adapter_type": "post-residual Houlsby bottleneck + adapter LayerNorm + zero-init up projection",
+  "adapter_scope": "all encoder and decoder sublayers",
+  "adapter_count": 45,
+  "adapter_bottleneck": 128,
+  "adapter_dropout": 0.05,
+  "adapter_lr": 0.0003,
+  "head_lr": 0.0003,
+  "class_weight_power": 0.5,
+  "label_smoothing": 0.0,
+  "best_dev_macro_f1": 0.5539462821428391,
+  "best_threshold": 0.405,
+  "best_epoch_frac": 3.0,
+  "lowercase": true,
+  "collapse_ws": true,
+  "refit_run": true,
+  "refit_threshold": 0.43764322996139526,
+  "test_refit_agreement": 0.9176005273566249,
+  "refit_target_batches": 49952,
+  "test_positive_rate_best": 0.4963744232036915,
+  "submission_strategies": {
+    "submission_best.zip": "50/50 calibrated heldout+refit margin ensemble",
+    "submission_heldout.zip": "clean-DEV-selected heldout checkpoint",
+    "submission_margin_h70_r30.zip": "70/30 calibrated heldout/refit margin hedge"
+  },
+  "submission_disagreement": {
+    "best_vs_heldout": 0.03691496374423204,
+    "best_vs_h70_r30": 0.014502307185234015,
+    "heldout_vs_h70_r30": 0.02241265655899802
+  },
+  "torch_version": "2.11.0+cu128",
+  "seed": 1234,
+  "test_labels_used": false,
+  "overlap_dev_labels_used": false
+}

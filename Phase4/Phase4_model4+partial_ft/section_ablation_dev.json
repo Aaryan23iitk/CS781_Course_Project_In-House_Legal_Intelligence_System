@@ -1,0 +1,56 @@
+{
+  "all": {
+    "macro_f1_tuned": 0.6767103957847129,
+    "threshold": 0.425,
+    "grid_best_macro_f1": 0.6814734561213434,
+    "macro_f1_at_0.5": 0.6278403222474696
+  },
+  "head only": {
+    "macro_f1_tuned": 0.5664759818240831,
+    "threshold": 0.445,
+    "grid_best_macro_f1": 0.5710199562250546,
+    "macro_f1_at_0.5": 0.5369959371379783
+  },
+  "middle only": {
+    "macro_f1_tuned": 0.5714008089298077,
+    "threshold": 0.555,
+    "grid_best_macro_f1": 0.5726777197365434,
+    "macro_f1_at_0.5": 0.4973811632680504
+  },
+  "evidence only": {
+    "macro_f1_tuned": 0.5633785140562249,
+    "threshold": 0.48,
+    "grid_best_macro_f1": 0.568658763083439,
+    "macro_f1_at_0.5": 0.5400208986415883
+  },
+  "tail only": {
+    "macro_f1_tuned": 0.638195483449868,
+    "threshold": 0.475,
+    "grid_best_macro_f1": 0.6415954468335903,
+    "macro_f1_at_0.5": 0.6318518518518519
+  },
+  "no head": {
+    "macro_f1_tuned": 0.6686464621826534,
+    "threshold": 0.425,
+    "grid_best_macro_f1": 0.6709752559203939,
+    "macro_f1_at_0.5": 0.625441787941788
+  },
+  "no middle": {
+    "macro_f1_tuned": 0.674791097671999,
+    "threshold": 0.405,
+    "grid_best_macro_f1": 0.6779946945711037,
+    "macro_f1_at_0.5": 0.6241583253070657
+  },
+  "no evidence": {
+    "macro_f1_tuned": 0.6632443237588932,
+    "threshold": 0.44,
+    "grid_best_macro_f1": 0.6688270205557961,
+    "macro_f1_at_0.5": 0.6406638086489062
+  },
+  "no tail": {
+    "macro_f1_tuned": 0.627549470358293,
+    "threshold": 0.45,
+    "grid_best_macro_f1": 0.6277289217115278,
+    "macro_f1_at_0.5": 0.5799429392710813
+  }
+}
