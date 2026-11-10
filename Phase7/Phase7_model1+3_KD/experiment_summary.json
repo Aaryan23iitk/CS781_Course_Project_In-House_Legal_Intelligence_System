@@ -1,0 +1,27 @@
+{
+  "experiment": "Model 1 teacher -> Model 3 student KD",
+  "teacher_checkpoint": "/kaggle/input/datasets/aaryant23/phase2-model3-ckpts/best_dev_f1.pt",
+  "student_checkpoint": "/kaggle/input/datasets/aaryant23/phase2-model3-ckpts/encdec_full_best (2).pt",
+  "best_epoch": 2,
+  "best_dev_f1": 0.33463035019455256,
+  "final_dev_metrics": {
+    "micro_f1": 0.33463035019455256,
+    "micro_precision": 0.3644067796610169,
+    "micro_recall": 0.30935251798561153,
+    "tp": 301,
+    "fp": 525,
+    "fn": 672
+  },
+  "bm25_dev_metrics": {
+    "micro_f1": 0.330183435241801,
+    "micro_precision": 0.3595641646489104,
+    "micro_recall": 0.3052415210688592,
+    "tp": 297,
+    "fp": 529,
+    "fn": 676
+  },
+  "selected_method": "Model 3 KD cross-encoder + BM25 fusion",
+  "test_queries": 237,
+  "submission_zip": "/kaggle/working/phase7_model1_to_model3_kd/phase7_model1_to_model3_kd_submission.zip",
+  "finished_at": "2026-11-07 12:02:09 IST"
+}
