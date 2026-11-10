@@ -1,0 +1,141 @@
+{
+  "phase": 5,
+  "experiment": 3,
+  "version": "exp3_model2_adalora_fast_v2_balanced_refit_ensemble",
+  "task": "Legal Statute Identification",
+  "method": "AdaLoRA \u2014 Adaptive Budget Allocation for PEFT",
+  "phase1_model": "Model2 decoder-only causal Transformer",
+  "architecture": {
+    "vocab_size": 24576,
+    "d_model": 640,
+    "n_layers": 13,
+    "n_heads": 10,
+    "ffn_dim": 2560,
+    "max_positions": 2048,
+    "sinusoidal_positions": true,
+    "pre_layernorm": true,
+    "activation": "GELU",
+    "tied_output_embedding": true
+  },
+  "adalora": {
+    "parameterization": "P diag(E) Q",
+    "init_rank": 12,
+    "target_avg_rank": 8,
+    "alpha": 16.0,
+    "adapt_start_block": 6,
+    "adapted_blocks": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "targets": [
+      "qkv",
+      "out_proj",
+      "ff_in",
+      "ff_out"
+    ],
+    "budget_schedule": "warmup + cubic decay + final fixed allocation",
+    "warmup_frac": 0.1,
+    "final_frac": 0.2,
+    "mask_interval": 10,
+    "best_rank_summary": {
+      "min": 0,
+      "median": 8.0,
+      "max": 12,
+      "total": 224,
+      "per_module": [
+        2,
+        8,
+        6,
+        7,
+        3,
+        8,
+        9,
+        8,
+        5,
+        5,
+        8,
+        10,
+        8,
+        5,
+        11,
+        11,
+        9,
+        11,
+        12,
+        12,
+        12,
+        11,
+        12,
+        11,
+        12,
+        2,
+        6,
+        0
+      ]
+    },
+    "backbone_trainable_params": 860496
+  },
+  "speed_design": {
+    "n_chunks": 3,
+    "chunk_len": 320,
+    "views": [
+      "head",
+      "statute_evidence",
+      "tail"
+    ],
+    "evals_per_epoch": 1,
+    "epochs": 2,
+    "frozen_prefix_blocks": 6,
+    "refit": true,
+    "refit_epochs": 2,
+    "heldout_refit_ensemble_weight": 0.5
+  },
+  "training": {
+    "loss": "BCEWithLogits + sqrt(raw pos_weight) clipped [1,10] + AdaLoRA orthogonality",
+    "adalora_lr": 0.0008,
+    "head_lr": 0.0008,
+    "micro_batch": 4,
+    "grad_accum": 4,
+    "ema_decay": 0.998
+  },
+  "selection": {
+    "primary": "cross-fitted clean-DEV Macro-F1",
+    "best_epoch": 2,
+    "cv_macro_f1": 0.29252955528952407,
+    "threshold_strategy": "shrunk_tau_25",
+    "clean_metrics": {
+      "macro_f1": 0.3042064403376667,
+      "micro_f1": 0.40121077073247685,
+      "subset_accuracy": 0.016297326840902314
+    },
+    "official_metrics": {
+      "macro_f1": 0.3039324982144088,
+      "micro_f1": 0.401147859922179,
+      "subset_accuracy": 0.016501325999410666
+    }
+  },
+  "submission_variants": {
+    "heldout_zip": "/kaggle/working/phase5_exp3_model2_adalora_fast_v2_balanced/submission_exp3_Model2_AdaLoRA_HELDOUT.zip",
+    "refit_zip": "/kaggle/working/phase5_exp3_model2_adalora_fast_v2_balanced/submission_exp3_Model2_AdaLoRA_REFIT.zip",
+    "heldout_refit_ensemble_zip": "/kaggle/working/phase5_exp3_model2_adalora_fast_v2_balanced/submission_exp3_Model2_AdaLoRA_HELDOUT_REFIT_ENSEMBLE.zip"
+  },
+  "assets": {
+    "model2_sha256": "7685624ff48e4c2fbf213f9be4f626173e52676b007b9bc50dc44b0323d3cc15",
+    "tokenizer_sha256": "9cfbe6f0e49067f63ba71fe1013021c5de9269a2b4bc6c9ae30a72e42102106d",
+    "dataset_sha256": {
+      "train": "f3601a7fce994616daf99fec251ca7936e98675a8fbf8af20a782cd55054c8a7",
+      "dev": "ab2660ac23abf38e902d63ab6871df740dc38e3fd973f441745f42564dadbd15",
+      "test": "c699d50bcc2f3e369955268d6195a80b23322ed91cb1fadc8d58b26ca8e9aa77"
+    }
+  },
+  "reference": {
+    "paper": "Zhang et al. (2023), Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning",
+    "venue": "ICLR 2023",
+    "arxiv": "2303.10512"
+  }
+}

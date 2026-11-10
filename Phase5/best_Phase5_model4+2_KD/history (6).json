@@ -1,0 +1,34 @@
+[
+  {
+    "sup_epoch": 1,
+    "cv_macro_f1": 0.32772699846061026,
+    "threshold_strategy": "shrunk_tau_25",
+    "clean": {
+      "macro_f1": 0.3375293920021395,
+      "micro_f1": 0.434278731096288,
+      "subset_accuracy": 0.028719069859882738
+    },
+    "official": {
+      "macro_f1": 0.3371336585292765,
+      "micro_f1": 0.43382087033390926,
+      "subset_accuracy": 0.028680876141832824
+    },
+    "pred_labels": 5.846467256285402
+  },
+  {
+    "sup_epoch": 2,
+    "cv_macro_f1": 0.3280832120584339,
+    "threshold_strategy": "shrunk_tau_25",
+    "clean": {
+      "macro_f1": 0.33846133999025263,
+      "micro_f1": 0.4341579874685933,
+      "subset_accuracy": 0.029315313524793798
+    },
+    "official": {
+      "macro_f1": 0.3381600076168498,
+      "micro_f1": 0.4336361394278198,
+      "subset_accuracy": 0.02927020921324035
+    },
+    "pred_labels": 5.620292159395807
+  }
+]

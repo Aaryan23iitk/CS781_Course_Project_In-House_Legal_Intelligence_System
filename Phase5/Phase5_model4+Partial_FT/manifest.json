@@ -1,0 +1,85 @@
+{
+  "phase": 5,
+  "experiment": 1,
+  "version": "v5_heldout_refit_ensemble",
+  "task": "Legal Statute Identification",
+  "notebook_version": "v5_HELDOUT_REFIT_ENSEMBLE",
+  "method": "Partial / Layer-wise Fine-tuning",
+  "phase1_model": "Model4 Efficient Modern Causal Decoder",
+  "architecture": {
+    "vocab_size": 24576,
+    "d_model": 640,
+    "n_layers": 17,
+    "n_heads": 10,
+    "n_kv_heads": 2,
+    "ffn_dim": 2048,
+    "max_positions": 2560,
+    "rope": true,
+    "rmsnorm": true,
+    "swiglu": true
+  },
+  "adaptation": {
+    "frozen_blocks": 12,
+    "trainable_blocks": [
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "n_chunks": 4,
+    "chunk_len": 384,
+    "views": [
+      "head",
+      "middle",
+      "statute_evidence",
+      "tail"
+    ],
+    "loss": "BCEWithLogits + sqrt(raw pos_weight), clipped [1,10]",
+    "ema_decay": 0.999,
+    "epochs": 3,
+    "backbone_lr": 4e-05,
+    "head_lr": 0.0004,
+    "micro_batch": 2,
+    "grad_accum": 8
+  },
+  "submission_variants": {
+    "heldout": "best clean-DEV-selected checkpoint",
+    "refit": "fresh Phase-1 initialization trained on TRAIN+DEV for heldout-selected duration",
+    "ensemble": "0.5 heldout probability + 0.5 refit probability",
+    "threshold_policy": "all variants use heldout-selected threshold vector; no post-refit DEV tuning"
+  },
+  "selection": {
+    "primary": "cross-fitted clean DEV Macro-F1",
+    "cv_macro_f1": 0.3521102049841443,
+    "weights": "ema",
+    "best_epoch_frac": 2.0,
+    "threshold_strategy": "shrunk_tau_25",
+    "clean_metrics": {
+      "macro_f1": 0.3611655181807631,
+      "micro_f1": 0.46368238565240993,
+      "subset_accuracy": 0.03408526284408228
+    },
+    "official_metrics": {
+      "macro_f1": 0.3606767810264691,
+      "micro_f1": 0.46320573326341546,
+      "subset_accuracy": 0.03408309596306846
+    }
+  },
+  "assets": {
+    "model4_sha256": "529cfef4605822c82075aee8254259ea8a42b91ec76ca41e32bd99ea7b61ed74",
+    "tokenizer_sha256": "9cfbe6f0e49067f63ba71fe1013021c5de9269a2b4bc6c9ae30a72e42102106d",
+    "dataset_sha256": {
+      "train": "f3601a7fce994616daf99fec251ca7936e98675a8fbf8af20a782cd55054c8a7",
+      "dev": "ab2660ac23abf38e902d63ab6871df740dc38e3fd973f441745f42564dadbd15",
+      "test": "c699d50bcc2f3e369955268d6195a80b23322ed91cb1fadc8d58b26ca8e9aa77"
+    }
+  },
+  "data": {
+    "train_rows": 42750,
+    "official_dev_rows": 10181,
+    "clean_dev_rows": 10063,
+    "test_rows": 13019,
+    "labels": 100
+  }
+}

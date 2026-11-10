@@ -1,0 +1,92 @@
+{
+  "phase": 5,
+  "experiment": 4,
+  "version": "exp4_model1_prefix_fast_v3_realinit_refit_ensemble",
+  "task": "Legal Statute Identification",
+  "method": "Prefix Tuning",
+  "phase1_model": "Model1 Encoder/Prefix-LM",
+  "architecture": {
+    "vocab_size": 24576,
+    "d_model": 768,
+    "n_layers": 14,
+    "n_heads": 12,
+    "ffn_dim": 3072,
+    "max_positions": 2048,
+    "sinusoidal_positions": true,
+    "pre_layernorm": true,
+    "activation": "GELU"
+  },
+  "prefix": {
+    "type": "continuous per-layer KV prefix",
+    "prefix_len": 16,
+    "prefix_start_block": 8,
+    "prefix_blocks": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "prefix_only_params": 147456,
+    "backbone_trainable": 0,
+    "initialization": "real-token K/V warm-start",
+    "init_probe_view": "statute_evidence"
+  },
+  "speed_design": {
+    "n_chunks": 3,
+    "chunk_len": 320,
+    "views": [
+      "head",
+      "statute_evidence",
+      "tail"
+    ],
+    "evals_per_epoch": 1,
+    "epochs": 2,
+    "frozen_prefix_blocks": 8,
+    "refit": true,
+    "refit_epochs": 2
+  },
+  "training": {
+    "loss": "BCEWithLogits + sqrt(raw pos_weight) clipped [1,10]",
+    "prefix_lr": 0.002,
+    "head_lr": 0.0008,
+    "micro_batch": 4,
+    "grad_accum": 4,
+    "ema_decay": 0.998
+  },
+  "selection": {
+    "primary": "cross-fitted clean-DEV Macro-F1",
+    "best_epoch": 2,
+    "cv_macro_f1": 0.2117679947567438,
+    "threshold_strategy": "per_label",
+    "clean_metrics": {
+      "macro_f1": 0.2236957878577667,
+      "micro_f1": 0.30938307129608766,
+      "subset_accuracy": 0.0013912352181258073
+    },
+    "official_metrics": {
+      "macro_f1": 0.22323237312445623,
+      "micro_f1": 0.30938640813220825,
+      "subset_accuracy": 0.001375110499950889
+    }
+  },
+  "submission_variants": {
+    "heldout_zip": "/kaggle/working/phase5_exp4_model1_prefix_fast_v3/submission_exp4_Model1_Prefix_HELDOUT.zip",
+    "refit_zip": "/kaggle/working/phase5_exp4_model1_prefix_fast_v3/submission_exp4_Model1_Prefix_REFIT.zip",
+    "heldout_refit_ensemble": "/kaggle/working/phase5_exp4_model1_prefix_fast_v3/submission_exp4_Model1_Prefix_HELDOUT_REFIT_ENSEMBLE.zip"
+  },
+  "assets": {
+    "model1_sha256": "017c57f393a55c96a9a24d0f98fc62775f3f4d0459b896eefe7a30437accacfc",
+    "tokenizer_sha256": "9cfbe6f0e49067f63ba71fe1013021c5de9269a2b4bc6c9ae30a72e42102106d",
+    "dataset_sha256": {
+      "train": "f3601a7fce994616daf99fec251ca7936e98675a8fbf8af20a782cd55054c8a7",
+      "dev": "ab2660ac23abf38e902d63ab6871df740dc38e3fd973f441745f42564dadbd15",
+      "test": "c699d50bcc2f3e369955268d6195a80b23322ed91cb1fadc8d58b26ca8e9aa77"
+    }
+  },
+  "reference": {
+    "paper": "Li & Liang (2021), Prefix-Tuning: Optimizing Continuous Prompts for Generation",
+    "doi": "10.18653/v1/2021.acl-long.353"
+  }
+}

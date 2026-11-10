@@ -1,0 +1,52 @@
+{
+  "phase": 5,
+  "experiment": 6,
+  "version": "exp6_model4_to_model2_kd_twostage_fastscore_v3",
+  "method": "Knowledge Distillation",
+  "teacher": "Model4 Partial/Layer-wise FT",
+  "student": "Phase-1 Model2 decoder-only",
+  "distillation": {
+    "sequence": "teacher-guided Stage A -> true-label-only Stage B",
+    "temperature": 2.5,
+    "soft_weight": 0.72,
+    "hard_weight_stage_a": 0.23,
+    "feature_weight": 0.05,
+    "stage_b_teacher_weight": 0.0,
+    "kd_epochs": 2,
+    "selected_supervised_epochs": 2,
+    "teacher_targets": "temperature-softened Bernoulli label logits + per-view representation alignment"
+  },
+  "student_training": {
+    "full_transformer_blocks_trainable": true,
+    "token_embedding_frozen": true,
+    "gradient_checkpointing": true,
+    "views": [
+      "head",
+      "middle",
+      "statute_evidence",
+      "tail"
+    ],
+    "chunk_len": 384,
+    "hard_loss": "weighted BCE + asymmetric multilabel loss",
+    "ema_decay": 0.9985
+  },
+  "heldout_selection": {
+    "cv_macro_f1": 0.3280832120584339,
+    "clean_metrics": {
+      "macro_f1": 0.33846133999025263,
+      "micro_f1": 0.4341579874685933,
+      "subset_accuracy": 0.029315313524793798
+    },
+    "official_metrics": {
+      "macro_f1": 0.3381600076168498,
+      "micro_f1": 0.4336361394278198,
+      "subset_accuracy": 0.02927020921324035
+    },
+    "threshold_strategy": "shrunk_tau_25"
+  },
+  "assets": {
+    "model2_phase1_sha256": "7685624ff48e4c2fbf213f9be4f626173e52676b007b9bc50dc44b0323d3cc15",
+    "teacher_heldout_sha256": "94388658184d647a730efd219f45eeb3ac3ae178a7f53fdaf9e87edbdfd39ce2",
+    "teacher_refit_sha256": "458a449abe02bc3ec99055d7cddd6cd8b90fc0da1bef61ad1fe506c2abdd37ef"
+  }
+}
